@@ -1,28 +1,18 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import './App.css'
+import { Main } from './scenes'
+import { Navbar } from './components'
+import theme from './ui/theme'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <MuiThemeProvider theme={theme}>
+    <CssBaseline>
+      <Navbar />
+      <Main />
+    </CssBaseline>
+  </MuiThemeProvider>
+)
 
-export default App;
+export default App
