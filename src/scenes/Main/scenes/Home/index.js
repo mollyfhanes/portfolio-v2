@@ -10,7 +10,6 @@ const containerProps = {
   color: 'primary',
   direction: 'column',
   alignContent: 'space-between',
-  alignItems: 'space-between',
   spacing: 40,
   style: { marginTop: '10vh' },
 }

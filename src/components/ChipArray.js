@@ -16,5 +16,5 @@ const ChipArray = (props) => {
 export default ChipArray
 
 ChipArray.propTypes = {
-  chipData: PropTypes.arrayOf(PropTypes.String).isRequired,
+  chipData: PropTypes.array.isRequired,
 }
