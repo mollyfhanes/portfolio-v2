@@ -2,8 +2,12 @@ const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
+const favicon = require('express-favicon')
+
 const app = express()
 const PORT = process.env.PORT || 8080
+
+app.use(favicon(`${__dirname}/build/favicon.ico`))
 
 // Logging middleware
 app.use(morgan('dev'))
@@ -13,14 +17,13 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Static middleware
-app.use(express.static(path.join(__dirname, '..', 'public')))
-
-// If you want to add routes, they should go here!
+app.use(express.static(__dirname))
+app.use(express.static(path.join(__dirname, 'build')))
 
 // For all GET requests that aren't to an API route,
 // we will send the index.html!
-app.get('/*', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'))
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 // Handle 404s

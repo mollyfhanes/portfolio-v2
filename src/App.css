@@ -64,7 +64,6 @@
   flex-flow: column;
   justify-content: space-between;
   flex: 1 1 50%;
-  max-height: 60vh;
   padding-left: 3vw;
 }
 
@@ -147,7 +146,6 @@
 
   #about-text {
     padding-left: 0;
-		max-height: none;
   }
 
 	#contacts-container {
