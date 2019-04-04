@@ -44,7 +44,7 @@ const Home = () => (
 
       <Grow in timeout={2000}>
         <Grid item>
-          <Button href="/skills" color="secondary" variant="outlined">
+          <Button href="/skills" color="textPrimary" variant="outlined">
             What&apos;s in my toolbox
           </Button>
         </Grid>
